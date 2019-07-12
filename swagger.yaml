@@ -1,0 +1,313 @@
+---
+swagger: "2.0"
+info:
+  description: Recipes API
+  version: "0.1"
+  title: Recipes API
+paths:
+  /api/recipes/:
+    get:
+      produces:
+      - application/json
+      parameters:
+      - name: user
+        in: query
+        required: false
+        type: string
+        x-example: kavya
+      responses:
+        200:
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model4'
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model0'
+        x-examples:
+          application/json: |
+            {
+                "name": "Chicken tikka",
+                "user": {
+                    "username": "admin"
+                },
+                "steps": [
+                    {
+                        "step_text": "make tikka gravy"
+                    },
+                    {
+                        "step_text": "Add chicken"
+                    },
+                    {
+                        "step_text": "bake"
+                    },
+                    {
+                        "step_text": "enjoy!"
+                    }
+                ],
+                "ingredients": [
+                    {
+                        "text": "chicken"
+                    },
+                    {
+                        "text": "tomato"
+                    },
+                    {
+                        "text": "shimla mirch"
+                    },
+                    {
+                        "text": "salt"
+                    }
+                ]
+            }
+      responses:
+        201:
+          description: Definition generated from Swagger Inspector
+          schema:
+            $ref: '#/definitions/Model5'
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model1'
+        x-examples:
+          application/json: |
+            {
+                "name": "biriyani",
+                "user": {
+                    "username": "kavya"
+                },
+                "steps": [
+                    {
+                        "step_text": "make biriyani 2 gravy"
+                    },
+                    {
+                        "step_text": "Add chicken"
+                    },
+                    {
+                        "step_text": "bake"
+                    },
+                    {
+                        "step_text": "enjoy!"
+                    }
+                ],
+                "ingredients": [
+                    {
+                        "text": "chicken"
+                    },
+                    {
+                        "text": "tomato"
+                    },
+                    {
+                        "text": "onion"
+                    },
+                    {
+                        "text": "spices"
+                    }
+                ]
+            }
+      responses:
+        200:
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model2'
+        x-examples:
+          application/json: |
+            {
+                "name": "Chicken tikka",
+                "user": {
+                    "username": "admin"
+                }
+            }
+      responses:
+        200:
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: string
+definitions:
+  User:
+    properties:
+      username:
+        type: string
+  Steps:
+    properties:
+      step_text:
+        type: string
+  Ingredients:
+    properties:
+      text:
+        type: string
+  Model0:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/User'
+      steps:
+        type: array
+        items:
+          $ref: '#/definitions/Steps'
+      ingredients:
+        type: array
+        items:
+          $ref: '#/definitions/Ingredients'
+  Model1_User:
+    properties:
+      username:
+        type: string
+  Model1_Steps:
+    properties:
+      step_text:
+        type: string
+  Model1_Ingredients:
+    properties:
+      text:
+        type: string
+  Model1:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/Model1_User'
+      steps:
+        type: array
+        items:
+          $ref: '#/definitions/Model1_Steps'
+      ingredients:
+        type: array
+        items:
+          $ref: '#/definitions/Model1_Ingredients'
+  Model2_User:
+    properties:
+      username:
+        type: string
+  Model2:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/Model2_User'
+  Array_User:
+    properties:
+      username:
+        type: string
+      last_name:
+        type: string
+      first_name:
+        type: string
+      email:
+        type: string
+  Array_Steps:
+    properties:
+      step_text:
+        type: string
+  Array_Ingredients:
+    properties:
+      text:
+        type: string
+  Array:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/Array_User'
+      steps:
+        type: array
+        items:
+          $ref: '#/definitions/Array_Steps'
+      ingredients:
+        type: array
+        items:
+          $ref: '#/definitions/Array_Ingredients'
+  Model3:
+    type: array
+    items:
+      $ref: '#/definitions/Array'
+  Model4_Array_User:
+    properties:
+      username:
+        type: string
+      last_name:
+        type: string
+      first_name:
+        type: string
+      email:
+        type: string
+  Model4_Array_Steps:
+    properties:
+      step_text:
+        type: string
+  Model4_Array_Ingredients:
+    properties:
+      text:
+        type: string
+  Model4_Array:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/Model4_Array_User'
+      steps:
+        type: array
+        items:
+          $ref: '#/definitions/Model4_Array_Steps'
+      ingredients:
+        type: array
+        items:
+          $ref: '#/definitions/Model4_Array_Ingredients'
+  Model4:
+    type: array
+    items:
+      $ref: '#/definitions/Model4_Array'
+  Model5_User:
+    properties:
+      username:
+        type: string
+      last_name:
+        type: string
+      first_name:
+        type: string
+      email:
+        type: string
+  Model5_Steps:
+    properties:
+      step_text:
+        type: string
+  Model5_Ingredients:
+    properties:
+      text:
+        type: string
+  Model5:
+    properties:
+      name:
+        type: string
+      user:
+        $ref: '#/definitions/Model5_User'
+      steps:
+        type: array
+        items:
+          $ref: '#/definitions/Model5_Steps'
+      ingredients:
+        type: array
+        items:
+          $ref: '#/definitions/Model5_Ingredients'
