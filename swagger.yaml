@@ -31,42 +31,6 @@ paths:
         required: false
         schema:
           $ref: '#/definitions/Model0'
-        x-examples:
-          application/json: |
-            {
-                "name": "Chicken tikka",
-                "user": {
-                    "username": "admin"
-                },
-                "steps": [
-                    {
-                        "step_text": "make tikka gravy"
-                    },
-                    {
-                        "step_text": "Add chicken"
-                    },
-                    {
-                        "step_text": "bake"
-                    },
-                    {
-                        "step_text": "enjoy!"
-                    }
-                ],
-                "ingredients": [
-                    {
-                        "text": "chicken"
-                    },
-                    {
-                        "text": "tomato"
-                    },
-                    {
-                        "text": "shimla mirch"
-                    },
-                    {
-                        "text": "salt"
-                    }
-                ]
-            }
       responses:
         201:
           description: Definition generated from Swagger Inspector
@@ -81,42 +45,6 @@ paths:
         required: false
         schema:
           $ref: '#/definitions/Model1'
-        x-examples:
-          application/json: |
-            {
-                "name": "biriyani",
-                "user": {
-                    "username": "kavya"
-                },
-                "steps": [
-                    {
-                        "step_text": "make biriyani 2 gravy"
-                    },
-                    {
-                        "step_text": "Add chicken"
-                    },
-                    {
-                        "step_text": "bake"
-                    },
-                    {
-                        "step_text": "enjoy!"
-                    }
-                ],
-                "ingredients": [
-                    {
-                        "text": "chicken"
-                    },
-                    {
-                        "text": "tomato"
-                    },
-                    {
-                        "text": "onion"
-                    },
-                    {
-                        "text": "spices"
-                    }
-                ]
-            }
       responses:
         200:
           description: Definition generated from Swagger Inspector
@@ -131,14 +59,6 @@ paths:
         required: false
         schema:
           $ref: '#/definitions/Model2'
-        x-examples:
-          application/json: |
-            {
-                "name": "Chicken tikka",
-                "user": {
-                    "username": "admin"
-                }
-            }
       responses:
         200:
           description: Definition generated from Swagger Inspector
@@ -207,42 +127,6 @@ definitions:
         type: string
       user:
         $ref: '#/definitions/Model2_User'
-  Array_User:
-    properties:
-      username:
-        type: string
-      last_name:
-        type: string
-      first_name:
-        type: string
-      email:
-        type: string
-  Array_Steps:
-    properties:
-      step_text:
-        type: string
-  Array_Ingredients:
-    properties:
-      text:
-        type: string
-  Array:
-    properties:
-      name:
-        type: string
-      user:
-        $ref: '#/definitions/Array_User'
-      steps:
-        type: array
-        items:
-          $ref: '#/definitions/Array_Steps'
-      ingredients:
-        type: array
-        items:
-          $ref: '#/definitions/Array_Ingredients'
-  Model3:
-    type: array
-    items:
-      $ref: '#/definitions/Array'
   Model4_Array_User:
     properties:
       username:
